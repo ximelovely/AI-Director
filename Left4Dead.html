@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left 4 Dead✨</title>
+    <link rel="stylesheet" href="Left4Dead.css">
+    </head>
+<body>
+    <h1>✨ Left 4 Dead ✨</h1>
+    <div id="gameContainer">
+        <div id="eventMessage"></div>
+        <div id="instructions">
+            <h1>💖 SURVIVOR 💖</h1>
+            <p><span class="highlight">WASD</span> - Moverse</p>
+            <p><span class="highlight">Clic izquierdo</span> - Disparar ✨</p>
+            <p style="margin-top: 20px; color: #c471ed; font-weight: 600;">Principios:</p>
+            <p>✨ Jugando bien → Más desafíos</p>
+            <p>💕 En crisis → Ayuda  aparece</p>
+            <p class="click-start">💫 Haz clic para comenzar 💫</p>
+        </div>
+        <div id="gameOver">
+            <h1>🌸 Fin del juego, fuiste brutalmente comido 🌸</h1>
+            <p style="font-size: 28px; margin: 20px 0;" id="finalScore"></p>
+            <p style="margin-top: 20px; font-size: 16px;">Recarga para jugar de nuevo 💫</p>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="ui">
+            <div class="stat health">💕 Vida: <span id="healthValue">100</span></div>
+            <div class="stat ammo">✨ Energía: <span id="ammoValue">50</span></div>
+            <div class="stat pool">
+                🌟 Pool: <span id="poolValue">50</span>
+                <div class="pool-bar" style="display: inline-block; vertical-align: middle; margin-left: 10px;">
+                    <div class="pool-fill" id="poolBar" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="stat kills">🦋 Victorias: <span id="killsValue">0</span></div>
+            <div class="stat difficulty">🎀 Nivel: <span id="diffValue">1.0</span>x</div>
+        </div>
+    </div>
+    <script src="Left4Dead.js"></script>
+</body>
