@@ -22,7 +22,7 @@ const director = {
     pool: 50,
     cooldown: 0,
     spawnTimer: 0,
-    difficulty: 1.0,
+    difficulty: 0.5,
 
     update() {
         if (this.cooldown > 0) {
@@ -32,7 +32,7 @@ const director = {
             const performance = this.evaluatePlayer();
             if (performance === 'high') {
                 this.pool += 0.8;
-                this.difficulty = Math.min(2.5, this.difficulty + 0.01);
+                this.difficulty = Math.min(2.5, this.difficulty + 0.005);
             } else if (performance === 'low') {
                 this.pool -= 1.2;
                 this.difficulty = Math.max(0.5, this.difficulty - 0.02);
@@ -132,9 +132,9 @@ function spawnEnemy(x, y) {
         x: x,
         y: y,
         health: 30,
-        speed: 2 * director.difficulty,
+        speed: 1.2 * director.difficulty,
         size: 10,
-        hue: Math.random() * 30 + 250 // Tonos violetas
+        hue: Math.random() * 30 + 250
     });
 }
 
