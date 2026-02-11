@@ -22,7 +22,7 @@ const director = {
     pool: 50,
     cooldown: 0,
     spawnTimer: 0,
-    difficulty: 0.5,
+    difficulty: 0.4,
 
     update() {
         if (this.cooldown > 0) {
@@ -31,11 +31,11 @@ const director = {
         } else {
             const performance = this.evaluatePlayer();
             if (performance === 'high') {
-                this.pool += 0.8;
-                this.difficulty = Math.min(2.5, this.difficulty + 0.005);
+                this.pool += 0.5;
+                this.difficulty = Math.min(2.5, this.difficulty + 0.003);
             } else if (performance === 'low') {
-                this.pool -= 1.2;
-                this.difficulty = Math.max(0.5, this.difficulty - 0.02);
+                this.pool -= 1.5;
+                this.difficulty = Math.max(0.3, this.difficulty - 0.03);
             }
         }
         this.pool = Math.max(0, Math.min(100, this.pool));
@@ -49,9 +49,9 @@ const director = {
     },
 
     shouldSpawnWave() {
-        if (this.pool >= 70 && this.spawnTimer <= 0) {
-            this.pool -= 30;
-            this.spawnTimer = 100;
+        if (this.pool >= 80 && this.spawnTimer <= 0) {
+            this.pool -= 35;
+            this.spawnTimer = 150;
             return true;
         }
         return false;
@@ -191,17 +191,17 @@ function update() {
         for (let i = 0; i < count; i++) {
             spawnEnemyRandom();
         }
-        showEvent(`✨ ¡Oleada mágica! (${count} desafíos) ✨`);
+        showEvent(`✨ ¡Oleada de zombies! (${count} desafíos) ✨`);
     }
 
-    if (Math.random() < 0.02 * director.difficulty) {
+    if (Math.random() < 0.01 * director.difficulty) {
         spawnEnemyRandom();
     }
 
     if ((player.health < 30 || player.ammo < 15) && director.spawnHelp()) {
         const type = player.health < player.ammo ? 'health' : 'ammo';
         spawnPickup(type);
-        showEvent(type === 'health' ? '💕 ¡Corazón mágico!' : '✨ ¡Energía celestial!');
+        showEvent(type === 'health' ? '💕 ¡Kit de recuperción!' : '✨ ¡Energía aumentada!');
     }
 
     // Enemigos
@@ -295,9 +295,10 @@ function update() {
 function draw() {
     // Fondo gradiente suave
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#ffeef8');
-    gradient.addColorStop(0.5, '#e8d5f2');
-    gradient.addColorStop(1, '#dfe9f5');
+    gradient.addColorStop(0, '#FDECEF');
+    gradient.addColorStop(0.5, '#FADADD');
+    gradient.addColorStop(1, '#FFD1DC');
+
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 

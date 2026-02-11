@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f8f4ff 0%, #ffeaf3 50%, #eef4ff 100%);
+    background: linear-gradient(135deg, #FDECEF, #FADADD, #FFD1DC);
     font-family: 'Louis George Cafe', sans-serif;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ h1 {
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
-    background: linear-gradient(45deg, #e6b0d5, #c7a1e0, #a3b8f9);
+    background: linear-gradient(45deg, #F7A1A8, #E8A6B8, #E6C1D9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.08);
@@ -117,33 +117,33 @@ canvas {
 }
 
 .health {
-    color: #ff7eb3;
-    border-color: #ffb8d9;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 232, 242, 0.95));
+    color: #F7A1A8;
+    border-color: #F6C1CC;
+    background: linear-gradient(135deg, #FDECEF, #FADADD);
 }
         
 .ammo {
-    color: #ffb347;
-    border-color: #ffd8b5;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 232, 0.95));
+    color: #E6B2A6;
+    border-color: #F4C2C2;
+    background: linear-gradient(135deg, #FDECEF, #FFD1DC);
 }
 
 .pool {
-    color: #7bc8a4;
-    border-color: #b8e6d0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 250, 242, 0.95));
+    color: #D8A7B1;
+    border-color: #E8A6B8;
+    background: linear-gradient(135deg, #FDECEF, #FADADD);
 }
 
 .kills {
-    color: #b19cd9;
-    border-color: #d9c9f1;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 240, 255, 0.95));
+    color: #E6C1D9;
+    border-color: #E8A6B8;
+    background: linear-gradient(135deg, #FDECEF, #FADADD);
 }
 
 .difficulty {
-    color: #ff9ff3;
-    border-color: #ffd6f7;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 252, 0.95));
+    color: #F6C1CC;
+    border-color: #F4C2C2;
+    background: linear-gradient(135deg, #FDECEF, #FFD1DC);
 }
 
 .stat-value {
@@ -155,25 +155,10 @@ canvas {
 }
 
 #eventMessage {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 250, 0.95));
-    color: #d46b9a;
-    padding: 16px 35px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 700;
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 30px rgba(255, 140, 200, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    letter-spacing: 0.5px;
-    z-index: 5;
-    backdrop-filter: blur(10px);
+    color: #E8A6B8;
+    box-shadow: 0 8px 30px rgba(246, 193, 204, 0.4);
 }
+
 
 #instructions {
     position: absolute;
@@ -264,24 +249,12 @@ canvas {
 }
 
 .pool-bar {
-    width: 160px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(123, 200, 164, 0.5);
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.08);
+    border-color: #E8A6B8;
 }
 
 .pool-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #a3e4c3, #7bc8a4, #5aa884);
-    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(123, 200, 164, 0.5);
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(90deg, #FFD1DC, #F6C1CC, #F7A1A8);
+    box-shadow: 0 0 15px rgba(247, 161, 168, 0.5);
 }
 
 .pool-fill::after {
